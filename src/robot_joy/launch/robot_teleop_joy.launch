@@ -1,0 +1,20 @@
+<launch>
+ <!-- Turtlesim Node-->
+  <node pkg="robot_joy" type="robot_teleop_joy" name="robot_teleop_joy">
+    <param name="axis_linear_x" value="1" type="int" />
+    <param name="axis_linear_y" value="0" type="int" />
+    <param name="linear_vel_max" value="0.8" type="double" />
+    <param name="angular_vel_max" value="2.0" type="double" />
+    <param name="linear_vel" value="0.2" type="double" />
+    <param name="angular_vel" value="0.6" type="double" />
+    <remap from="joy/cmd_vel" to="/cmd_vel" />
+  </node>
+
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="joy_node" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+  </node>
+
+</launch>

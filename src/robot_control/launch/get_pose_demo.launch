@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="robot_control" type="get_pose_demo.py" name="get_pose" output="screen">
+  </node>
+  
+</launch>

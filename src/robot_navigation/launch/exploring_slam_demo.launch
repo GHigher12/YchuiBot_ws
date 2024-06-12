@@ -1,0 +1,8 @@
+<launch>
+
+    <include file="$(find robot_slam_gmapping)/launch/robot_slam_gmapping.launch"/>
+
+    <!-- 运行move_base节点 -->
+    <include file="$(find robot_navigation)/launch/move_base.launch" />
+
+</launch>

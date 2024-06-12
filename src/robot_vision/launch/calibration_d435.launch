@@ -1,0 +1,17 @@
+<launch>
+  <!-- 加载相机驱动节点（例如realsense2_camera节点） -->
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch" />
+
+  <!-- 使用camera_info_manager来管理相机信息 -->
+  <node pkg="camera_info_manager" type="camera_info_manager" name="camera_info_manager" ns="/camera">
+    <remap from="camera_info" to="/camera/color/camera_info"/>
+    <param name="camera_name" value="camera"/>
+    <param name="calibration_file" value="$(find robot_vision)/config/d435_color.yaml"/> <!-- 替换your_package为你存放yaml文件的package名 -->
+    <param name="camera_frame_id" value="camera_color_optical_frame"/> <!-- 根据实际情况调整frame_id -->
+  </node>
+
+  <!-- 发布静态的camera_info话题 -->
+  <node pkg="camera_info_manager" type="camera_info_publisher" name="camera_info_publisher" ns="/camera">
+    <remap from="camera_info" to="/camera/color/camera_info"/>
+  </node>
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="robot_vision" type="human_hand_detect.py" respawn="false" name="human_hand_detect" output="screen">
+    </node>
+</launch>

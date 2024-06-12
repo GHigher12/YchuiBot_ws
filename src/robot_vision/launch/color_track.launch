@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="robot_vision" type="color_track" respawn="false" name="color_track" output="screen">
+    </node>
+</launch>

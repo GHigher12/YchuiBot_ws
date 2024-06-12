@@ -1,0 +1,17 @@
+<launch>
+
+
+    
+    <!-- 加载机器人模型参数 -->
+    <include file="$(find robot_model)/launch/display.launch"/>
+    <!-- 运行激光雷达驱动 -->
+    <!-- 思岚雷达 -->
+    <include file="$(find robot_lidar)/launch/rplidar_a2m8.launch" />
+    <!-- 杉川3A雷达 -->
+    <!-- <include file="$(find delta_lidar)/launch/delta_lidar.launch" /> -->
+    <!-- 启动Ychuibot -->
+    <node pkg="robot_bringup" type="robot_bringup" name="robot_bringup" output="screen" />
+
+    
+
+</launch>

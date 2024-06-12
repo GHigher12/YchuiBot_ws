@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="robot_control" type="move_linear.py" respawn="false" name="move_linear" output="screen">
+    </node>
+</launch>

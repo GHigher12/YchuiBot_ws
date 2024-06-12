@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="robot_voice" type="robot_talker" name="robot_talker" output="screen"/>
+</launch>
